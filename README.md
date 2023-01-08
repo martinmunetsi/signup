@@ -1,4 +1,4 @@
-# Sign UP
+# Web service for User SIGN UPs - based on Spring Boot
 A Spring Boot application that provides a way to handle user sign up requests. These requests could originate from multiple clients and would need to be serviced at this central sign up service. 
 This application, is a RESTful web service and, is developed using Spring Boot version 3.0.2-SNAPSHOT, Maven 3.8.6, Java 17.0.2. The dependencies include spring web, spring data JPA and postgresql.
 
