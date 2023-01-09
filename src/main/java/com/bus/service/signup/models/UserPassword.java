@@ -1,14 +1,17 @@
 package com.bus.service.signup.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity(name ="pswd")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class UserPassword {
     @Id
-    @GeneratedValue
-    @Column(name ="pswd_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name ="id")
     private Long pswdId;
 
     @Column(name ="user_id")
@@ -24,7 +27,8 @@ public class UserPassword {
     private boolean locked;
 
     @ManyToOne
-   // @JoinColumn(name="user_id", nullable=false)
+    @JoinColumn(name="user_id", nullable=false, insertable=false, updatable=false)
+    @JsonIgnore
     User user;
 
     public User getUser() {
